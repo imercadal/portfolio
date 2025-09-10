@@ -5,7 +5,7 @@ export default function Home() {
     <div className="relative">
       <div className="relative flex items-center justify-center h-screen overflow-hidden z-20">
         <video
-          src="irene_dpreel_homepage (1080p).mp4"
+          src="irene_dpreel_homepage_1080p.mp4"
           autoPlay loop muted
           className="absolute z-10 w-auto min-w-full min-h-full max-w-none">
         </video>

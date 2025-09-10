@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from './project-data';
-import { useEffect, useRef, useState } from "react";
-import Player from "@vimeo/player";
+import { useState } from "react";
 
 export default function Cinematography() {
   const [isPlaying, setIsPlaying] = useState(false)
