@@ -5,13 +5,9 @@ import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
 import type { Metadata } from "next";
 
-type FilmDetailPageProps = {
-  params: {
-    slug: string;
-  };
-};
+type Params = { slug: string };
 
-export default function FilmDetailPage({ params } : FilmDetailPageProps){
+export default function FilmDetailPage({ params } : { params : Params}){
     const project: Project | undefined = projects.find(
         (p) => p.slug === params.slug
     );
@@ -33,24 +29,17 @@ export default function FilmDetailPage({ params } : FilmDetailPageProps){
     )
 }
     
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-};
+export async function generateStaticParams(): Promise<Params[]> {
+  return projects.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata(
-  { params }: FilmDetailPageProps
+  { params }: { params: Params }
 ): Promise<Metadata> {
   const project = projects.find((p) => p.slug === params.slug);
-
   if (!project) {
-    return {
-      title: "Project Not Found | Cinematography",
-      description: "The requested project could not be found.",
-    };
+    return { title: "Project Not Found | Cinematography", description: "The requested project could not be found." };
   }
-
   return {
     title: `${project.title} | Cinematography`,
     description: project.logline ?? "A film project in the cinematography collection.",
@@ -61,7 +50,7 @@ export async function generateMetadata(
       images: project.mainImage ? [{ url: project.mainImage }] : [],
     },
   };
-};
+}
 
 /*
 import FilmProject from "@/components/film-project";
