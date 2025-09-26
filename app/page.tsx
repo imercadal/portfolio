@@ -13,7 +13,7 @@ export default function Home() {
       <div className="absolute inset-0 flex items-center justify-center z-40">
         <Link
           href="/cinematography"
-          className="border-2 border-white px-8 py-3 text-base text-white hover:bg-white hover:text-black transition-colors duration-300"
+          className="border-2 border-white px-8 py-3 text-base text-white hover:text-gray-300 hover:border-gray-300 transition-colors duration-100"
         >
           VIEW WORK
         </Link>
