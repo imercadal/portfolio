@@ -1,13 +1,18 @@
-import { type PageProps } from "next";
 import FilmProject from "@/components/film-project";
 import NotFoundPage from "@/app/not-found";
 import { projects, Project } from "@/app/cinematography/project-data";
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
+import type { Metadata } from "next";
 
-export default function FilmDetailPage({ params } : PageProps<{ slug: string }>){
+type FilmDetailPageProps = {
+  params: {
+    slug: string;
+  };
+};
 
-    const project = projects.find(
+export default function FilmDetailPage({ params } : FilmDetailPageProps){
+    const project: Project | undefined = projects.find(
         (p) => p.slug === params.slug
     );
 
@@ -28,6 +33,35 @@ export default function FilmDetailPage({ params } : PageProps<{ slug: string }>)
     )
 }
     
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+};
+
+export async function generateMetadata(
+  { params }: FilmDetailPageProps
+): Promise<Metadata> {
+  const project = projects.find((p) => p.slug === params.slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Cinematography",
+      description: "The requested project could not be found.",
+    };
+  }
+
+  return {
+    title: `${project.title} | Cinematography`,
+    description: project.logline ?? "A film project in the cinematography collection.",
+    openGraph: {
+      title: project.title,
+      description: project.logline ?? "A film project in the cinematography collection.",
+      url: `/cinematography/${project.slug}`,
+      images: project.mainImage ? [{ url: project.mainImage }] : [],
+    },
+  };
+};
 
 /*
 import FilmProject from "@/components/film-project";
