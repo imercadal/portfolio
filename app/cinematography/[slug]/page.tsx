@@ -5,11 +5,12 @@ import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
 import type { Metadata } from "next";
 
-type Params = { slug: string };
+type Params = Promise<{ slug: string }>;
 
-export default function FilmDetailPage({ params } : { params : Params}){
+export default async function FilmDetailPage(props: { params : Params}){
+    const { slug } = await props.params;
     const project: Project | undefined = projects.find(
-        (p) => p.slug === params.slug
+        (p) => p.slug === slug
     );
 
     if (!project) {
