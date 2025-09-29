@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import { IconType } from 'react-icons';
 import { MdEmail } from 'react-icons/md';
 
 const navigation = [
