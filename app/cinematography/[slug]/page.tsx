@@ -10,7 +10,9 @@ type Params = { slug: string };
 export default async function FilmDetailPage({ params }: { params: Promise<Params>}){
   const { slug } = await params;
 
-  const project: Project | undefined = projects.find((p) => p.slug === slug);
+  const project: Project | undefined = projects.find(
+    (p) => p.slug === slug
+  );
 
   if (!project) {
       return <NotFoundPage />;
@@ -27,11 +29,11 @@ export default async function FilmDetailPage({ params }: { params: Promise<Param
         </div>
     </main>
   )
-}
+};
     
 export async function generateStaticParams(){
   return projects.map((p) => ({ slug: p.slug }));
-}
+};
 
 export async function generateMetadata(
   { params }: { params: Promise<Params> }
@@ -39,7 +41,7 @@ export async function generateMetadata(
   const { slug } = await params;
 
   const project = projects.find((p) => p.slug === slug);
-  
+
   if (!project) {
     return { title: "Project Not Found | Cinematography", description: "The requested project could not be found." };
   }

@@ -4,9 +4,13 @@ import { movies, Movie } from '@/app/directing/movie-data';
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
 
-export default function MovieDetailPage({ params } : { params: { slug: string }}){
+type Params = { slug: string };
+
+export default async function MovieDetailPage({ params } : { params: Promise<Params>}){
+    const { slug } = await params;
+
     const movie: Movie | undefined = movies.find(
-        (m) => m.slug === params.slug
+        (m) => m.slug === slug
     )
 
     if (!movie){
@@ -26,6 +30,12 @@ export default function MovieDetailPage({ params } : { params: { slug: string }}
     )
 
 };
+
+export async function generateStaticParams(){
+  return movies.map((m) => ({ slug: m.slug }));
+};
+
+
 /*
 import FilmProject from "@/components/film-project";
 import NotFoundPage from "@/app/not-found";
