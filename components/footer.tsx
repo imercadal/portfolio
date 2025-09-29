@@ -3,12 +3,6 @@ import React from 'react';
 import { IconType } from 'react-icons';
 import { MdEmail } from 'react-icons/md';
 
-
-const MyIcon: IconType = MdEmail;
-type Item = {
-  icon: IconType;
-};
-
 const navigation = [
     {
       name: 'Instagram',
@@ -37,15 +31,12 @@ const navigation = [
     {
       name: 'Email',
       href: 'mailto:irenemercadal@duck.com',
-      icon: () => (
-        <MyIcon size={25}/>
-      ),
+      icon: () => <MdEmail size={25} />,
     },
   ]
 
 
-export default function Footer({ item }: { item: Item }) {
-  const Icon = item.icon;
+export default function Footer() {
 
   return(
     <footer>
@@ -60,7 +51,7 @@ export default function Footer({ item }: { item: Item }) {
                       rel='noopener noreferrer'
                     >
                     <span className="sr-only">{item.name}</span>
-                    <Icon aria-hidden="true" className="w-6 h-6" />
+                    {item.icon()}
                     </a>
                 ))}
             </div>
