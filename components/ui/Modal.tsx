@@ -14,17 +14,17 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-40 flex items-center justify-center bg-black/50"
+          className="fixed inset-0 z-40 m-0 flex items-center justify-center bg-black/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <div className="relative max-w-6xl w-full p-4">
             <button
-              className="absolute top-4 right-4 text-white hover:text-accent"
+              className="absolute top-6 right-6 text-white hover:text-accent"
               onClick={onClose}
             >
-              <X size={28} />
+              <X size={24} />
             </button>
             {children}
           </div>
