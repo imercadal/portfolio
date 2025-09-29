@@ -55,7 +55,7 @@ export default function Footer() {
                 ))}
             </div>
             <p className="mt-2 text-center text-xs/6 text-dark md:order-1 md:mt-0">
-                &copy; 2025 Developed by Irene Mercadal Albornoz.
+                &copy; 2025 Developed by Irene Mercadal Albornoz with ♥.
             </p>
         </div>
     </footer>
