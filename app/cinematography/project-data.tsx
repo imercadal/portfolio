@@ -37,12 +37,12 @@ export const projects : Project[] = [
             { role: "Colorist", name: "Patrick Devine" },
         ],
         mainImage: "/104_entre-tormentas-4.webp",
-        poster: "/entre-tormentas-poster.webp",
+        poster: "/100_entre-tormentas-poster.webp",
         stills: [
-        "/entre-tormentas-3.webp",
-        "/entre-tormentas-1.webp",
-        "/entre-tormentas-2.webp",
-        "/entre-tormentas-4.webp",
+        "/103_entre-tormentas-3.webp",
+        "/100_entre-tormentas-1.webp",
+        "/102_entre-tormentas-2.webp",
+        "/104_entre-tormentas-4.webp",
         ],
     },
     {
@@ -82,8 +82,8 @@ export const projects : Project[] = [
             { role: "Cinematographer", name: "Irene Mercadal" },
             { role: "Cast", name: "Jueun Kang, Esther Hur" },
         ],
-        mainImage: "/120_pusher-1.png",
-        poster: "/122_pusher.png",
-        stills: ["/124_pusher.jpeg", "/123_pusher.jpeg",  "/125_pusher.jpeg", "/126_pusher.jpeg",  "/122-1_pusher.jpeg", "/127_pusher.jpeg", "/129B_pusher.jpeg", "/123-2_pusher.jpeg"]
+        mainImage: "/120_pusher-1.webp",
+        poster: "/125_pusher.jpeg",
+        stills: ["/124_pusher.jpeg", "/123_pusher.jpeg",  "/128_pusher.jpeg", "/126_pusher.jpeg",  "/122-1_pusher.jpeg", "/127_pusher.jpeg", "/129B_pusher.jpeg", "/123-2_pusher.jpeg"]
     },
 ]
