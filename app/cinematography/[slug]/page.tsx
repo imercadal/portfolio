@@ -7,26 +7,26 @@ import type { Metadata } from "next";
 
 type Params = { slug: string };
 
-export default function FilmDetailPage({ params }: { params: Params}){
-    const project: Project | undefined = projects.find(
-        (p) => p.slug === params.slug
-    );
+export default async function FilmDetailPage({ params }: { params: Promise<Params>}){
+  const { slug } = await params;
 
-    if (!project) {
-        return <NotFoundPage />;
-    }
+  const project: Project | undefined = projects.find((p) => p.slug === slug);
 
-    return(
-        <main className="min-h-screen bg-background py-8 pt-20">
-            <FilmProject project={project} />
-            <div className="flex justify-end pt-8 font-bold max-w-6xl mx-auto p-6">
-              <Link href="/cinematography" className="flex items-center hover:text-yellow-500 transition-colors">
-                <ArrowLongRightIcon className="inline h-6 w-6 pr-1"/>
-                Back to projects
-              </Link>
-            </div>
-        </main>
-    )
+  if (!project) {
+      return <NotFoundPage />;
+  }
+
+  return(
+    <main className="min-h-screen bg-background py-8 pt-20">
+        <FilmProject project={project} />
+        <div className="flex justify-end pt-8 font-bold max-w-6xl mx-auto p-6">
+          <Link href="/cinematography" className="flex items-center hover:text-yellow-500 transition-colors">
+            <ArrowLongRightIcon className="inline h-6 w-6 pr-1"/>
+            Back to projects
+          </Link>
+        </div>
+    </main>
+  )
 }
     
 export async function generateStaticParams(){
@@ -34,9 +34,12 @@ export async function generateStaticParams(){
 }
 
 export async function generateMetadata(
-  { params }: { params: Params }
+  { params }: { params: Promise<Params> }
 ): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+
+  const project = projects.find((p) => p.slug === slug);
+  
   if (!project) {
     return { title: "Project Not Found | Cinematography", description: "The requested project could not be found." };
   }
