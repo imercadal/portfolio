@@ -17,7 +17,7 @@ export interface Project {
 export const projects : Project[] = [
     {
         id: 1,
-        title: "Entre Tormentas",
+        title: "Entre tormentas",
         slug: "entre-tormentas",
         category: "narrative",
         year: 2025,
@@ -127,7 +127,7 @@ export const projects : Project[] = [
     },
     {
         id: 8,
-        title: "A toy car",
+        title: "A Toy Car",
         slug: "a-toy-car",
         category: "narrative",
         year: 2019,
