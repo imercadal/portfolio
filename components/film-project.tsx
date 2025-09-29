@@ -1,12 +1,40 @@
+'use client'
+import { useState, useCallback, useEffect } from 'react';
 import Image from "next/image";
-
 import { Project } from "@/app/cinematography/project-data";
+import Modal from './ui/Modal';
 
 interface FilmProjectProps {
   project: Project;
 }
 
 export default function FilmProject({ project }: FilmProjectProps) {
+  const [selectedStill, setSelectedStill] = useState<string | null>(null);
+
+  const nextImage = useCallback(() => {
+    if (!selectedStill || !project.stills || project.stills.length === 0) return;
+    const currentIndex = project.stills.indexOf(selectedStill);
+    const nextIndex = (currentIndex + 1) % project.stills.length;
+    setSelectedStill(project.stills[nextIndex]);
+  }, [selectedStill, project.stills]);
+
+  const prevImage = useCallback(() => {
+    if (!selectedStill || !project.stills || project.stills.length === 0) return;
+    const currentIndex = project.stills.indexOf(selectedStill);
+    const prevIndex =
+      (currentIndex - 1 + project.stills.length) % project.stills.length;
+    setSelectedStill(project.stills[prevIndex]);
+  }, [selectedStill, project.stills]);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedStill(null);
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [nextImage, prevImage]);
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
@@ -69,9 +97,9 @@ export default function FilmProject({ project }: FilmProjectProps) {
           {project.stills.map((still, index) => (
             <div 
             key={index} 
+            onClick={() => setSelectedStill(still)}
             className="overflow-hidden group cursor-pointer bg-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow"
             >
-
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={still || "/placeholder.svg"}
@@ -85,6 +113,24 @@ export default function FilmProject({ project }: FilmProjectProps) {
         </div>
       </div>
       )}
+
+      <Modal isOpen={!!selectedStill} onClose={() => setSelectedStill(null)}>
+        {selectedStill && (
+          <Image 
+            src={selectedStill}
+            alt={`${project.title} full still`}
+            width={1920}
+            height={1080}
+            className='mx-auto rounded-lg'
+          />
+        )}
+        <div className='absolute inset-y-0 left-6 z-50 flex items-center'>
+          <button onClick={prevImage} className='text-white text-xl'>‹</button>
+        </div>
+        <div className='absolute inset-y-0 right-6 flex items-center'>
+          <button onClick={nextImage} className='text-white text-xl'>›</button>
+        </div>
+      </Modal>
     </div>
   )
 }
