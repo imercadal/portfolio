@@ -36,13 +36,13 @@ export const projects : Project[] = [
             { role: "Sound Designer", name: "Anne Tolkkinen" },
             { role: "Colorist", name: "Patrick Devine" },
         ],
-        mainImage: "/104_entre-tormentas-4.webp",
+        mainImage: "/101_entre-tormentas-main.webp",
         poster: "/100_entre-tormentas-poster.webp",
         stills: [
-        "/103_entre-tormentas-3.webp",
-        "/100_entre-tormentas-1.webp",
-        "/102_entre-tormentas-2.webp",
-        "/104_entre-tormentas-4.webp",
+        "/105_entre-tormentas.webp",
+        "/102_entre-tormentas.webp",
+        "/103_entre-tormentas.webp",
+        "/101_entre-tormentas-main.webp",
         ],
     },
     {

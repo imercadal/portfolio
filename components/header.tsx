@@ -14,7 +14,7 @@ export default function Header() {
     }
 
     return(
-        <header className="fixed w-full bg-white z-40">
+        <header className="fixed w-full bg-white z-50">
             <div className="container mx-auto px-4 py-6 tracking-wide">
                 <div className="flex justify-between items-center">
                     <Link href="/" className="text-lg font-light tracking-widest">

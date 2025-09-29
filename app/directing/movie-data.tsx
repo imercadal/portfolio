@@ -73,6 +73,7 @@ export const movies : Movie[] = [
         ],
         mainImage: "/502_WL.png",
         poster: "/500_WL_Poster.png",
+        stills: ["/502_WL.png", "/503_WL.png", "/504_WL.png", "/505_WL.png"]
     },
     {
         id: 4,
@@ -105,6 +106,8 @@ export const movies : Movie[] = [
             { role: "Director", name: "Irene Mercadal" }
         ],
         mainImage: "/520_Barriodeperros.png",
+        poster: "/520_Barriodeperros.png",
+        stills: ["/521_Barriodeperros.png", "/522_Barriodeperros.png", "/523_Barriodeperros.png", "/524_Barriodeperros.png"]
     },
     {
         id: 6,
