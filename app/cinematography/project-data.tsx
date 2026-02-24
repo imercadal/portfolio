@@ -23,7 +23,7 @@ export const projects : Project[] = [
         year: 2025,
         duration: 13,
         country: "Puerto Rico",
-        festivals: ["SXSW"],
+        festivals: ["SXSW" , "New Orleans International Film Festival", "Mar del Plata International Film Festival", "Shorts Mexico", "Vermont International Film Festival", "FEST - New Directors/New Films Festival", "Curta Kinoforum - São Paulo International Short Film Festival", "International Short Film Festival of Cyprus"],
         logline:
         "After a hurricane ravaged his hometown, a grieving man breaks into an off-limits cemetery to rescue the lost remains of his brother in order to give him a proper burial.",
         credits: [
