@@ -1,7 +1,7 @@
 'use client'
 import { useState, useCallback, useEffect } from 'react';
 import Image from "next/image";
-import { Project } from "@/app/cinematography/project-data";
+import { Project } from "@/app/types/project";
 import Modal from './ui/Modal';
 
 interface FilmProjectProps {

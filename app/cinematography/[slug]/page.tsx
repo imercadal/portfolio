@@ -1,6 +1,7 @@
 import FilmProject from "@/components/film-project";
 import NotFoundPage from "@/app/not-found";
-import { projects, Project } from "@/app/cinematography/project-data";
+import { projects } from "@/app/data/projects";
+import { Project } from "@/app/types/project";
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
 import type { Metadata } from "next";

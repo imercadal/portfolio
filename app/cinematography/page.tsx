@@ -2,17 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from './project-data';
+import { projects } from '../data/projects';
 import { useState } from "react";
+
+const shotProjects = projects.filter(p => p.roles.includes("Cinematographer"))
 
 export default function Cinematography() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   return (
-    <div className="container mx-auto px-8 py-6">
+    <div className="container mx-auto max-w-6xl px-8 py-6">
         <div className="space-y-8">
           <div className="relative block group sm:mb-6 my-20">
-            <div className="relative z-30 w-full h-80 md:h-96 mb-4 overflow-hidden rounded-xl">
+            <div className="relative z-30 w-full aspect-video mb-4 overflow-hidden rounded-xl">
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl"
                 src="https://player.vimeo.com/video/708494331?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -32,7 +34,7 @@ export default function Cinematography() {
             </div>
           </div>
           <h1 className="text-2xl font-semibold my-1 pt-4 tracking-wide">NARRATIVE</h1>
-          {projects.map((project) => (
+          {shotProjects.map((project) => (
           <div key={project.id} className="relative block group">
               <div className="relative w-full h-48 md:h-112 mb-4 overflow-hidden">
                   <Image

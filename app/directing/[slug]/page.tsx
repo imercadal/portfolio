@@ -1,6 +1,7 @@
 import FilmProject from "@/components/film-project";
 import NotFoundPage from "@/app/not-found";
-import { movies, Movie } from '@/app/directing/movie-data';
+import { projects } from '@/app/data/projects';
+import { Project } from "@/app/types/project";
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
 
@@ -9,7 +10,7 @@ type Params = { slug: string };
 export default async function MovieDetailPage({ params } : { params: Promise<Params>}){
     const { slug } = await params;
 
-    const movie: Movie | undefined = movies.find(
+    const movie: Project | undefined = projects.find(
         (m) => m.slug === slug
     )
 
@@ -32,7 +33,7 @@ export default async function MovieDetailPage({ params } : { params: Promise<Par
 };
 
 export async function generateStaticParams(){
-  return movies.map((m) => ({ slug: m.slug }));
+  return projects.map((m) => ({ slug: m.slug }));
 };
 
 
