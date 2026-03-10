@@ -39,7 +39,7 @@ export default function Footer() {
 
   return(
     <footer>
-        <div className="md:h-16 h-24 mx-auto max-w-7xl px-6 py-6 md:flex md:items-center md:justify-around lg:px-20">
+        <div className="md:h-16 h-24 mx-auto max-w-6xl px-6 lg:px-0 py-6 md:flex md:items-center md:justify-between">
             <div className="flex justify-center items-center gap-x-6 md:order-2">
                 {navigation.map((item) => (
                     <a 

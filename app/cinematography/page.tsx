@@ -11,7 +11,7 @@ export default function Cinematography() {
   const [isPlaying, setIsPlaying] = useState(false)
 
   return (
-    <div className="container mx-auto max-w-6xl px-8 py-6">
+    <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-6">
         <div className="space-y-8">
           <div className="relative block group sm:mb-6 my-20">
             <div className="relative z-30 w-full aspect-video mb-4 overflow-hidden rounded-xl">

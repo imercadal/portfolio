@@ -53,4 +53,8 @@ body {
   .h-160 {
     height: 40rem;
   }
+
+  .pt-30 {
+    padding-top: 8rem;
+  }
 }
