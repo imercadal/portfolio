@@ -5,7 +5,7 @@ import Link from "next/link";
 import { projects } from '../data/projects';
 import { useState } from "react";
 
-const shotProjects = projects.filter(p => p.roles.includes("Cinematographer"))
+const shotProjects = projects.filter(p => p.roles?.includes("Cinematographer"))
 
 export default function Cinematography() {
   const [isPlaying, setIsPlaying] = useState(false)

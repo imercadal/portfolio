@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '../data/projects';
 
-const directedProjects = projects.filter(p => p.roles.includes("Director"))
+const directedProjects = projects.filter(p => p.roles?.includes("Director"))
 
 export default function Directing(){
     return(
@@ -18,7 +18,7 @@ export default function Directing(){
                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
                                 <span className='absolute z-10 inset-0 bg-gray-400 mix-blend-screen opacity-0 group-hover:opacity-60 transition-opacity duration-300'></span>
-                                <h1 className='absolute z-20 inset-0 flex items-center justify-center z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300'> 
+                                <h1 className='absolute inset-0 flex items-center justify-center z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300'> 
                                     <Link href={`/directing/${project.slug}`} key={project.id} className="text-xl font-bold text-gray-900 uppercase tracking-wider drop-shadow-sm">
                                         {project.title}
                                     </Link>

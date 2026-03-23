@@ -22,7 +22,7 @@ export default function DiveDeeper(){
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <span className='absolute z-10 inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300'></span> 
-                        <Link href={`/other/${project.slug}`} key={project.id} className='absolute z-20 inset-0 flex flex-col items-center justify-center z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                        <Link href={`/other/${project.slug}`} key={project.id} className='absolute inset-0 flex flex-col items-center justify-center z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                             <h2 className="text-xl font-bold text-white shadow-xl uppercase tracking-wider">{project.title}</h2>                  
                             <p className="tracking-wider text-white/80">{project.bajada}</p> 
                         </Link>

@@ -85,7 +85,7 @@ export default function FilmProject({ project }: FilmProjectProps) {
               <h2 className="text-base font-semibold text-foreground mb-4">Credits</h2>
               <div className="space-y-3">
                 {project.credits.map(
-                  (credit: Project["credits"][number], index: number) => (
+                  (credit: NonNullable<Project["credits"]>[number], index: number) => (
                   <div key={index} className="text-xs flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
                     <span className="font-medium text-foreground min-w-0 sm:min-w-[120px]">{credit.role}:</span>
                     <span className="text-muted-foreground">{credit.name}</span>
