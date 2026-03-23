@@ -44,7 +44,7 @@ export default function FilmProject({ project }: FilmProjectProps) {
           {/* Poster */}
           <div className="relative aspect-[8/12] w-full max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-lg 2shadow-xl">
             <Image
-              src={project.poster || "/placeholder.svg"}
+              src={project.poster || project.mainImage}
               alt={`${project.title} poster`}
               fill
               className="object-cover rounded-lg shadow-xl transition-transform hover:scale-105"
@@ -56,11 +56,16 @@ export default function FilmProject({ project }: FilmProjectProps) {
           <div className="space-y-6">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">{project.title}</h1>
+              {project.duration ?
               <p className="text-sm text-muted-foreground">{project.year}  ᐧ  {project.country}  ᐧ  {project.duration} min</p>
+              :
+              <p className="text-sm text-muted-foreground">{project.year}  ᐧ  {project.country} </p>
+
+              }
             </div>
 
             <div>
-              <p className="text-xs text-muted-foreground leading-relaxed">{project.logline}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{project.logline}</p>
             </div>
               {project.festivals && project.festivals.length > 0 && (
                 <div className="mt-2 flex">
@@ -75,6 +80,7 @@ export default function FilmProject({ project }: FilmProjectProps) {
               </div>
               )}
 
+            {project.credits && project.credits.length > 0 && (
             <div>
               <h2 className="text-base font-semibold text-foreground mb-4">Credits</h2>
               <div className="space-y-3">
@@ -87,6 +93,17 @@ export default function FilmProject({ project }: FilmProjectProps) {
                 ))}
               </div>
             </div>
+            )}
+            {project.urlToItem && project.urlToItem.length > 0 && (
+            <div className="space-y-3">
+              {project.urlToItem.map((item, index) => (
+                <a key={index} href={item.url} target="_blank" rel="noopener noreferrer"
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors underline block">
+                  {item.title}
+                </a>
+              ))}
+            </div>
+            )}
           </div>
         </div>
 

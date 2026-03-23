@@ -9,7 +9,7 @@ export default function About() {
                 <title>Irene Mercadal | About</title>
                 <meta name="description" content="Irene Mercadal is a filmmaker, cinematographer, and interdisciplinary artist based in NYC. Film MFA from NYU Tisch, director of Aguas y restos, and member of Glitch."/>
             </Head>
-            <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-0 py-24 pt-30">
+            <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-0 py-16 pt-30">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mx-auto">
                     <div className="relative aspect-[3/4] w-full sm:w-1/2 md:w-full mx-auto sm:px-0 max-h-[80vh]">
                         <Image src="/10_Irenes-headshot.webp" alt="Irene Mercadal" fill className="object-cover" />
@@ -105,6 +105,34 @@ export default function About() {
 
                 </div>
             </div>
+            <div className='container flex justify-center mx-auto max-w-6xl px-4 sm:px-6 lg:px-0 pb-8'>
+
+                <div className="mt-10">
+                    <a
+                        href="/Irene-Mercadal-Resume.pdf"
+                        download
+                        className="inline-block border border-current px-6 py-2 text-sm hover:bg-black hover:text-white transition-colors"
+                    >
+                        Download Resume
+                    </a>
+                </div>
+            </div>
         </>
-    )
+    );
 };
+
+/*
+<div className="flex flex-col sm:flex-row text-sm/7">
+    <h2 className="w-20 shrink-0 text-base font-light mb-4 sm:mb-2">EDUCATION</h2>
+    <div className="pl-0 sm:pl-6 space-y-4">
+        <div>
+            <p className="font-bold">2023 — New York University</p>
+            <p>Film M.F.A.</p>
+        </div>
+        <div>
+            <p className="font-bold">2016 — Pontificia Universidad Católica de Chile</p>
+            <p>Bachelor in Arts, Double Major in Film Aesthetics and Audiovisual Communication</p>
+        </div>
+    </div>
+</div>
+ */

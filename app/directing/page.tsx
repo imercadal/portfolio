@@ -17,9 +17,9 @@ export default function Directing(){
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
-                                <span className='absolute z-10 inset-0 bg-yellow-200 opacity-0 group-hover:opacity-60 transition-opacity duration-300'></span>
+                                <span className='absolute z-10 inset-0 bg-gray-400 mix-blend-screen opacity-0 group-hover:opacity-60 transition-opacity duration-300'></span>
                                 <h1 className='absolute z-20 inset-0 flex items-center justify-center z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300'> 
-                                    <Link href={`/directing/${project.slug}`} key={project.id} className="text-xl font-bold text-gray-900 uppercase tracking-wider">
+                                    <Link href={`/directing/${project.slug}`} key={project.id} className="text-xl font-bold text-gray-900 uppercase tracking-wider drop-shadow-sm">
                                         {project.title}
                                     </Link>
                                 </h1>

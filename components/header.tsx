@@ -30,24 +30,31 @@ export default function Header() {
                     <nav className="hidden md:block">
                         <ul className="flex text-sm space-x-8">
                             <li>
-                                <Link href="/cinematography" className={`hover:text-orange-500 transition-colors ${
+                                <Link href="/cinematography" className={`hover:text-gray-600 transition-colors ${
                                     pathname === '/cinematography' ? 'font-bold' : ''
                                 }`}>
                                 CINEMATOGRAPHY
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/directing" className={`hover:text-orange-500 transition-colors ${
+                                <Link href="/directing" className={`hover:text-gray-600 transition-colors ${
                                     pathname === '/directing' ? 'font-bold' : ''
                                 }`}>
                                 DIRECTING
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" className={`hover:text-orange-500 transition-colors ${
+                                <Link href="/about" className={`hover:text-gray-600 transition-colors ${
                                     pathname === '/about' ? 'font-bold' : ''
                                 }`}>
                                 ABOUT
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/other" className={`hover:text-gray-600 transition-colors ${
+                                    pathname === '/other' ? 'font-bold' : ''
+                                }`}>
+                                OTHER
                                 </Link>
                             </li>
                         </ul>
