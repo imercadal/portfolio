@@ -4,6 +4,7 @@ import { projects } from '@/app/data/projects';
 import { Project } from "@/app/types/project";
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
+import type { Metadata } from "next";
 
 type Params = { slug: string };
 
@@ -34,6 +35,26 @@ export default async function MovieDetailPage({ params } : { params: Promise<Par
 
 export async function generateStaticParams(){
   return projects.map((m) => ({ slug: m.slug }));
+};
+
+export async function generateMetadata(
+  { params }: { params: Promise<Params> }
+): Promise<Metadata> {
+  const { slug } = await params;
+  const movie = projects.find((m) => m.slug === slug);
+  if (!movie) {
+    return { title: "Project Not Found | Directing", description: "The requested project could not be found." };
+  }
+  return {
+    title: `${movie.title} | Directing — Irene Mercadal`,
+    description: movie.logline ?? "A film project by Irene Mercadal.",
+    openGraph: {
+      title: movie.title,
+      description: movie.logline ?? "A film project by Irene Mercadal.",
+      url: `/directing/${movie.slug}`,
+      images: movie.mainImage ? [{ url: movie.mainImage }] : [],
+    },
+  };
 };
 
 

@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Irene Mercadal | About",
+    description: "Irene Mercadal is a filmmaker, cinematographer, and interdisciplinary artist based in NYC. Film MFA from NYU Tisch, director of Aguas y restos, and member of Glitch.",
+};
 
 export default function About() {
     return (
         <>
-            <Head>
-                <title>Irene Mercadal | About</title>
-                <meta name="description" content="Irene Mercadal is a filmmaker, cinematographer, and interdisciplinary artist based in NYC. Film MFA from NYU Tisch, director of Aguas y restos, and member of Glitch."/>
-            </Head>
             <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-0 py-16 pt-30">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mx-auto">
                     <div className="relative aspect-[3/4] w-full sm:w-1/2 md:w-full mx-auto sm:px-0 max-h-[80vh]">

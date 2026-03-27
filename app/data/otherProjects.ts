@@ -21,7 +21,7 @@ export const otherProjects : Project[] = [
         category: "Podcast",
         year: 2024,
         country: "Latin America",
-        logline: "Interviews with Latin American filmmakers and dramatic artists, about their work and the state of film today.",
+        logline: "Interviews with Latin American filmmakers and dramatic artists about their work and the state of film today.",
         credits: [            
             { role: "Hosting & Audio by", name: "Irene Mercadal" },
             { role: "Music by", name: "Benjamin Griffiths" },
@@ -30,6 +30,23 @@ export const otherProjects : Project[] = [
         urlToItem: [
             { title: "Apple Music", url: "https://podcasts.apple.com/us/podcast/pare-de-sufrir/id1650451493"},
             { title: "Spotify", url: "https://open.spotify.com/show/4C3I14E2S0y2U4Gcy49xso?si=331808d13d794908"}
+        ],
+    }, 
+    {
+        id: 3,
+        title: "Developer portfolio",
+        bajada: "web projects",
+        slug: "dev-portfolio",
+        category: "Developer",
+        year: 2024,
+        country: "Chile, US",
+        logline: "Check out some of the projects I've developed from scratch.",
+        credits: [            
+            { role: "Technologies", name: "JS, TS, Node.js, React, Next.js, TailwindCSS, i18n, REST APIs, Git, Sanity CMS, AWS, Axios, JQuery, Vercel, Material UI, Framer Motion." }
+        ],
+        mainImage: "/dev2.png",
+        urlToItem: [
+            { title: "GO TO PORTFOLIO", url: "https://irenemercadal.dev"}
         ],
     }, 
 ]
