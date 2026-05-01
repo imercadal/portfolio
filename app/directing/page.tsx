@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '../data/projects';
 
-const directedProjects = projects.filter(p => p.roles?.includes("Director"))
+const directedProjects = projects.filter(p => p.roles?.includes("Director")).sort((a, b) => a.id - b.id)
 
 export default function Directing(){
     return(

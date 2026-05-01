@@ -1,7 +1,30 @@
 import { Project } from "../types/project";
 
 export const projects : Project[] = [
-{
+    {
+        id: 1,
+        title: "Por qué los peces",
+        roles: ["Director"],
+        slug: "los-peces",
+        category: "Narrative",
+        year: 2026,
+        country: "Chile",
+        status: "In Post-Production",
+        logline: "An overzealous scientist illegally scoops an endangered fish species in two buckets and ventures across the Chilean Andes in a rescue mission they may not survive.",
+        credits: [            
+            { role: "Writer-Director & DP", name: "Irene Mercadal" },
+            { role: "Producer", name: "Fran Zayas" },
+            { role: "Producer/AD", name: "José Manuel Vélez" },
+            { role: "B-Cam & Dron Op", name: "Sami Cloris" },
+            { role: "Felipe", name: "Rodrigo Calderón" },
+            { role: "Jaime", name: "David Gaete" },
+            { role: "Karla", name: "Paula Ureta" },
+            { role: "Natalia", name: "Valen" },
+        ],
+        mainImage: "/570_PQLP_1.png",
+        poster: "/571_PQLP_poster_1.jpg"
+    },
+    {
         id: 11,
         title: "Baby Steps",
         roles: ["Director"],
@@ -115,29 +138,6 @@ export const projects : Project[] = [
         ],
         mainImage: "/560_Lapesca-square.png",
         poster: "/563_Lapesca_poster.png"
-    },
-    {
-        id: 1,
-        title: "Por qué los peces",
-        roles: ["Director"],
-        slug: "los-peces",
-        category: "Narrative",
-        year: 2026,
-        country: "Chile",
-        status: "In Post-Production",
-        logline: "An overzealous scientist illegally scoops an endangered fish species in two buckets and ventures across the Chilean Andes in a rescue mission they may not survive.",
-        credits: [            
-            { role: "Writer-Director & DP", name: "Irene Mercadal" },
-            { role: "Producer", name: "Fran Zayas" },
-            { role: "Producer/AD", name: "José Manuel Vélez" },
-            { role: "B-Cam & Dron Op", name: "Sami Cloris" },
-            { role: "Felipe", name: "Rodrigo Calderón" },
-            { role: "Jaime", name: "David Gaete" },
-            { role: "Karla", name: "Paula Ureta" },
-            { role: "Natalia", name: "Valen" },
-        ],
-        mainImage: "/570_PQLP_1.png",
-        poster: "/571_PQLP_poster_1.jpg"
     },
  {
         id: 10,
