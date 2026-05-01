@@ -1,7 +1,7 @@
 export type ProjectRole = "Director" | "Cinematographer"
 
 export interface Project {
-    id?: number;
+    id: number;
     title: string;
     bajada?: string;
     roles?: ProjectRole[]
