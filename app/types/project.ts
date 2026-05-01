@@ -10,6 +10,7 @@ export interface Project {
     year: number;
     duration?: number;
     country: string;
+    status?: string;
     festivals?: string[];
     logline: string;
     credits?: Array<{ role: string, name: string }>;

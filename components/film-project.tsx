@@ -57,9 +57,9 @@ export default function FilmProject({ project }: FilmProjectProps) {
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">{project.title}</h1>
               {project.duration ?
-              <p className="text-sm text-muted-foreground">{project.year}  ᐧ  {project.country}  ᐧ  {project.duration} min</p>
+              <p className="text-sm text-muted-foreground">{project.year}  ᐧ  {project.country}  ᐧ  {project.duration} min{project.status ? `  ᐧ  ${project.status}` : ""}</p>
               :
-              <p className="text-sm text-muted-foreground">{project.year}  ᐧ  {project.country} </p>
+              <p className="text-sm text-muted-foreground">{project.year}  ᐧ  {project.country}{project.status ? `  ᐧ  ${project.status}` : ""}</p>
 
               }
             </div>

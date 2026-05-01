@@ -2,7 +2,7 @@ import { Project } from "../types/project";
 
 export const projects : Project[] = [
 {
-        id: 1,
+        id: 11,
         title: "Baby Steps",
         roles: ["Director"],
         slug: "babysteps",
@@ -10,6 +10,7 @@ export const projects : Project[] = [
         year: 2025,
         duration: 12,
         country: "US",
+        status: "In Post-Production",
         logline: "A quirky 35-year old unemployed artist living in NYC, is determined to become a mother while trying to make ends meet.",
         credits: [            
             { role: "Writer/Director", name: "Irene Mercadal" },
@@ -25,7 +26,7 @@ export const projects : Project[] = [
         stills: ["/534_Babysteps.png", "/533_Babysteps.png", "/536_Babysteps.png", "/532_Babysteps.png"]
     },    
     {
-        id: 2,
+        id: 12,
         title: "Aguas y restos",
         roles: ["Director"],
         slug: "aguas-y-restos",
@@ -43,7 +44,7 @@ export const projects : Project[] = [
         poster: "/516_AyR.jpg",
     },    
     {
-        id: 3,
+        id: 13,
         title: "Weona Loca",
         roles: ["Director"],
         slug: "weona-loca",
@@ -65,7 +66,7 @@ export const projects : Project[] = [
         stills: ["/502_WL.png", "/503_WL.png", "/504_WL.png", "/505_WL.png"]
     },
     {
-        id: 4,
+        id: 14,
         title: "Alberto",
         roles: ["Director"],
         slug: "alberto",
@@ -84,7 +85,7 @@ export const projects : Project[] = [
         stills: ["/542_Alberto.jpeg", "/543_Alberto.jpeg", "/544_Alberto.jpeg", "/545_Alberto.jpeg"]
     },
     {
-        id: 5,
+        id: 15,
         title: "Barrio de perros",
         roles: ["Director"],
         category: "Short Film",
@@ -101,7 +102,7 @@ export const projects : Project[] = [
         stills: ["/521_Barriodeperros.png", "/522_Barriodeperros.png", "/523_Barriodeperros.png", "/524_Barriodeperros.png"]
     },
     {
-        id: 6,
+        id: 16,
         title: "La pesca milagrosa",
         roles: ["Director"],
         slug: "la-pesca",
@@ -114,6 +115,29 @@ export const projects : Project[] = [
         ],
         mainImage: "/560_Lapesca-square.png",
         poster: "/563_Lapesca_poster.png"
+    },
+    {
+        id: 1,
+        title: "Por qué los peces",
+        roles: ["Director"],
+        slug: "los-peces",
+        category: "Narrative",
+        year: 2026,
+        country: "Chile",
+        status: "In Post-Production",
+        logline: "An overzealous scientist illegally scoops an endangered fish species in two buckets and ventures across the Chilean Andes in a rescue mission they may not survive.",
+        credits: [            
+            { role: "Writer-Director & DP", name: "Irene Mercadal" },
+            { role: "Producer", name: "Fran Zayas" },
+            { role: "Producer/AD", name: "José Manuel Vélez" },
+            { role: "B-Cam & Dron Op", name: "Sami Cloris" },
+            { role: "Felipe", name: "Rodrigo Calderón" },
+            { role: "Jaime", name: "David Gaete" },
+            { role: "Karla", name: "Paula Ureta" },
+            { role: "Natalia", name: "Valen" },
+        ],
+        mainImage: "/570_PQLP_1.png",
+        poster: "/571_PQLP_poster_1.jpg"
     },
  {
         id: 10,
