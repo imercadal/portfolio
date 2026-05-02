@@ -17,9 +17,9 @@ export const projects : Project[] = [
             { role: "Producer/AD", name: "José Manuel Vélez" },
             { role: "B-Cam & Dron Op", name: "Sami Cloris" },
             { role: "Felipe", name: "Rodrigo Calderón" },
+            { role: "Natalia", name: "Valentina Araya" },
             { role: "Jaime", name: "David Gaete" },
-            { role: "Karla", name: "Paula Ureta" },
-            { role: "Natalia", name: "Valen" },
+            { role: "Karla", name: "Paula Ureta" }
         ],
         mainImage: "/570_PQLP_1.png",
         poster: "/571_PQLP_poster_1.jpg"
